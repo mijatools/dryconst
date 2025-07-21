@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Steel Framing Professional</title>
+    
+    <!-- MDBootstrap CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/estilos.css">
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    
+    <style>
+           
+   :root {
+            --primary-color: #dc2626;
+            --secondary-color: #2c2c2c;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #dc2626, #b91c1c);
+            --gradient-dark: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+
+             --rojo-intenso: #C00000;
+            --gris-claro: #D9D9D9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
+            --gris-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+         
+        /* Navbar principal */
+        .navbar-custom {
+            background: linear-gradient(90deg, var(--gris-oscuro) 0%, var(--negro) 100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--rojo-intenso);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--rojo-intenso) !important;
+        }
+        
+        .navbar-brand i {
+            color: var(--rojo-intenso);
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Elementos del menú */
+        .navbar-nav .nav-link {
+            color: var(--blanco) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--rojo-intenso);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(192, 0, 0, 0.4);
+            color: var(--blanco) !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: var(--rojo-intenso);
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        /* Botón CTA especial */
+        .btn-cta {
+            background: linear-gradient(45deg, var(--rojo-intenso), #ff4757);
+            border: none;
+            color: var(--blanco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(192, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff4757, var(--rojo-intenso));
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.9), rgba(220, 53, 69, 0.8)),
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2c2c2c, #dc3545);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        .glass-card {
+            background: rgba(44, 44, 44, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content-section {
+            padding: 100px 0;
+            background: rgba(44, 44, 44, 0.1);
+        }
+        
+        .vision-mission-card {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.3), rgba(26, 26, 26, 0.2));
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vision-mission-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(220, 53, 69, 0.1), transparent);
+            transition: all 0.5s ease;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+        
+        .vision-mission-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1s ease-in-out;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(-45deg); }
+            100% { transform: translateX(100%) rotate(-45deg); }
+        }
+        
+        .vision-mission-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .vision-mission-card:hover .icon-circle {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.4), rgba(26, 26, 26, 0.2));
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .service-card:hover::after {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #2c2c2c, #dc3545);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            background: rgba(44, 44, 44, 0.1);
+            padding: 100px 0;
+        }
+        
+        .team-card {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.3), rgba(26, 26, 26, 0.2));
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .team-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.2), rgba(220, 53, 69, 0.1));
+            padding: 80px 0;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(44, 44, 44, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(44, 44, 44, 0.4);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, #2c2c2c, #dc3545);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 120px 0 80px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos flotantes decorativos -->
+    <div class="floating-elements">
+        <i class="fas fa-tools floating-element" style="top: 10%; left: 10%; font-size: 2rem; animation-delay: 0s;"></i>
+        <i class="fas fa-building floating-element" style="top: 20%; right: 10%; font-size: 1.5rem; animation-delay: 2s;"></i>
+        <i class="fas fa-hammer floating-element" style="bottom: 30%; left: 15%; font-size: 2.5rem; animation-delay: 4s;"></i>
+        <i class="fas fa-home floating-element" style="bottom: 20%; right: 20%; font-size: 2rem; animation-delay: 1s;"></i>
+    </div>
+
+    <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+           <a class="navbar-brand" href="#">
+      <img src="img/logo/logo.png" alt="Icono" class="icon" style="height: 50px; width: auto; margin-right: 8px;">
+    
+    
+</a>
+            
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">
+                            <i class="fas fa-tools me-2"></i>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">
+                            <i class="fas fa-building me-2"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nosotros.html">
+                            <i class="fas fa-users me-2"></i>Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactos.html">
+                            <i class="fas fa-phone me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-cta red" style="background-color: #25D366; color: white;">
+    <i class="fab fa-whatsapp me-2"></i>
+    WhatsApp
+</button>
+            </div>
+        </div>
+    </nav>
+    
+   <br><br>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4" data-aos="fade-right">
+                        Construyendo el Futuro con <span style="color: #dc3545;">Steel Framing</span>
+                    </h1>
+                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
+                        Somos especialistas en construcción moderna con tecnología Steel Framing, 
+                        ofreciendo soluciones integrales y acabados de primera calidad.
+                    </p>
+                    <div class="d-flex gap-3" data-aos="fade-right" data-aos-delay="400">
+                        <button class="btn btn-lg rounded-pill px-4" style="background-color: #dc3545; color: white; border: none;">
+                            <i class="fas fa-play me-2"></i>Ver Proyectos
+                        </button>
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fas fa-phone me-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         class="img-fluid rounded-4 shadow-lg" alt="Construcción Steel Framing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">150+</div>
+                        <h5 class="text-white">Proyectos Completados</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <h5 class="text-white">Años de Experiencia</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <h5 class="text-white">Clientes Satisfechos</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <h5 class="text-white">Soporte Técnico</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visión y Misión -->
+    <section class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestra Filosofía</h2>
+                <p class="section-subtitle">Comprometidos con la excelencia y la innovación</p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="vision-mission-card h-100">
+                        <div class="icon-circle">
+                            <i class="fas fa-eye text-white" style="font-size: 2rem;"></i>
+                        </div>
+                        <h3 class="text-gradient mb-4 text-center fw-bold">Nuestra Visión</h3>
+                        <p class="text-light mb-4" style="line-height: 1.8;">
+                            Ser la empresa líder en construcción con tecnología Steel Framing en la región, 
+                            reconocida por nuestra innovación, calidad excepcional y compromiso con la 
+                            sostenibilidad ambiental.
+                        </p>
+                        <p class="text-light" style="line-height: 1.8;">
+                            Aspiramos a transformar la industria de la construcción mediante soluciones 
+                            eficientes, eco-amigables y de vanguardia que mejoren la calidad de vida 
+                            de nuestros clientes.
+                        </p>
+                        <div class="d-flex align-items-center mt-4">
+                            <i class="fas fa-star" style="color: #dc3545;" class="me-2"></i>
+                            <small class="text-light">Excelencia garantizada</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="vision-mission-card h-100">
+                        <div class="icon-circle">
+                            <i class="fas fa-bullseye text-white" style="font-size: 2rem;"></i>
+                        </div>
+                        <h3 class="text-gradient mb-4 text-center fw-bold">Nuestra Misión</h3>
+                        <p class="text-light mb-4" style="line-height: 1.8;">
+                            Proporcionar soluciones integrales de construcción utilizando la tecnología 
+                            Steel Framing más avanzada, ofreciendo servicios especializados en cubiertas, 
+                            cielos drywall, muros drywall, pisos flotantes, cielos PVC y ripados.
+                        </p>
+                        <p class="text-light" style="line-height: 1.8;">
+                            Nos comprometemos a entregar proyectos de la más alta calidad, en tiempo 
+                            y forma, superando las expectativas de nuestros clientes mediante un 
+                            equipo altamente capacitado y tecnología de punta.
+                        </p>
+                        <div class="d-flex align-items-center mt-4">
+                            <i class="fas fa-shield-alt text-success me-2"></i>
+                            <small class="text-light">Garantía de por vida</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Servicios -->
+    <section class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestros Servicios Especializados</h2>
+                <p class="section-subtitle">Tecnología avanzada para construcción moderna</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-home service-icon"></i>
+                    <h4 class="text-white mb-3">Steel Framing</h4>
+                    <p class="text-light">
+                        Construcción con estructura de acero galvanizado, más rápida, 
+                        resistente y sostenible que los métodos tradicionales.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Steel Framing">
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-layer-group service-icon"></i>
+                    <h4 class="text-white mb-3">Cubiertas</h4>
+                    <p class="text-light">
+                        Sistemas de cubiertas modernas con aislamiento térmico y acústico 
+                        superior, diseñadas para máxima durabilidad.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Cubiertas">
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-paint-roller service-icon"></i>
+                    <h4 class="text-white mb-3">Cielo Drywall</h4>
+                    <p class="text-light">
+                        Cielos suspendidos en drywall con acabados perfectos, 
+                        instalación rápida y excelente aislamiento.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Cielo Drywall">
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-border-style service-icon"></i>
+                    <h4 class="text-white mb-3">Muro Drywall</h4>
+                    <p class="text-light">
+                        Divisiones interiores en drywall, ligeras, resistentes 
+                        y con excelente terminación para cualquier ambiente.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Muro Drywall">
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-th-large service-icon"></i>
+                    <h4 class="text-white mb-3">Piso Flotante</h4>
+                    <p class="text-light">
+                        Instalación de pisos flotantes de alta calidad con 
+                        técnicas profesionales y garantía extendida.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Piso Flotante">
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-grip-lines service-icon"></i>
+                    <h4 class="text-white mb-3">Cielo PVC y Ripados</h4>
+                    <p class="text-light">
+                        Cielos en PVC y sistemas de ripados decorativos 
+                        para espacios modernos y elegantes.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded mt-3" alt="Cielo PVC">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestro Equipo -->
+    <section class="team-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestro Equipo Profesional</h2>
+                <p class="section-subtitle">Especialistas comprometidos con la excelencia</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Director General">
+                        </div>
+                        <div class="p-4">
+                            <h5 class="text-white mb-2">Carlos Mendoza</h5>
+                            <p style="color: #dc3545;" class="mb-3">Director General & Ingeniero Civil</p>
+                            <p class="text-light small">
+                                15 años de experiencia en construcción con Steel Framing 
+                                y gestión de proyectos de gran envergadura.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b586?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Arquitecta Senior">
+                        </div>
+                        <div class="p-4">
+                            <h5 class="text-white mb-2">Ana Rodriguez</h5>
+                            <p style="color: #dc3545;" class="mb-3">Arquitecta Senior</p>
+                            <p class="text-light small">
+                                Especialista en diseño arquitectónico moderno y 
+                                optimización de espacios con tecnología Steel Framing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Jefe de Obra">
+                        </div>
+                        <div class

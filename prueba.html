@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Proyectos - Steel Framing Professional</title>
+   
+    <!-- MDBootstrap CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/estilos.css">
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    
+    <style>
+        
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #2c2c2c;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #dc2626, #b91c1c);
+            --gradient-dark: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+
+             --rojo-intenso: #C00000;
+            --gris-claro: #D9D9D9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
+            --gris-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+         
+        /* Navbar principal */
+        .navbar-custom {
+            background: linear-gradient(90deg, var(--gris-oscuro) 0%, var(--negro) 100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--rojo-intenso);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--rojo-intenso) !important;
+        }
+        
+        .navbar-brand i {
+            color: var(--rojo-intenso);
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Elementos del menú */
+        .navbar-nav .nav-link {
+            color: var(--blanco) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--rojo-intenso);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(192, 0, 0, 0.4);
+            color: var(--blanco) !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: var(--rojo-intenso);
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        /* Botón CTA especial */
+        .btn-cta {
+            background: linear-gradient(45deg, var(--rojo-intenso), #ff4757);
+            border: none;
+            color: var(--blanco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(192, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff4757, var(--rojo-intenso));
+        }
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+         /* Tarjetas de servicios */
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-color: var(--rojo-intenso);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--rojo-intenso);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        /* Animaciones */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Efectos de partículas */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--rojo-intenso);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: particles 15s infinite linear;
+        }
+        
+        @keyframes particles {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+      
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            color: rgba(220, 38, 38, 0.1);
+            font-size: 3rem;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { top: 40%; right: 30%; animation-delay: 6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.2; }
+        }
+
+    
+    
+
+       
+
+       
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+           <a class="navbar-brand" href="#">
+      <img src="img/logo/logo.png" alt="Icono" class="icon" style="height: 50px; width: auto; margin-right: 8px;">
+    
+    
+</a>
+            
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">
+                            <i class="fas fa-tools me-2"></i>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">
+                            <i class="fas fa-building me-2"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">
+                            <i class="fas fa-users me-2"></i>Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactos.html">
+                            <i class="fas fa-phone me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-cta red" style="background-color: #25D366; color: white;">
+    <i class="fab fa-whatsapp me-2"></i>
+    WhatsApp
+</button>
+            </div>
+        </div>
+    </nav>
+    
+   <br><br>
+ 
+    <!-- Carrusel profesional a ancho completo con soporte móvil mejorado -->
+<div id="carouselExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-interval="10000" data-mdb-pause="hover">
+    <!-- Indicadores - mejorados para dispositivos táctiles -->
+    <div class="carousel-indicators">
+        <button type="button" data-mdb-target="#carouselExample" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-mdb-target="#carouselExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-mdb-target="#carouselExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-mdb-target="#carouselExample" data-mdb-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-mdb-target="#carouselExample" data-mdb-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    
+    <!-- Contenido del carrusel -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/inicio/imagen1.jpg" class="d-block w-100" alt="Imagen 1" />
+            <div class="carousel-caption">
+                <p> zona sud, sobre la Panamericana, a una cuadra del Colegio  San Antonio, Cochabamba - Cercado. ¡Te esperamos!"</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/inicio/imagen2.jpg" class="d-block w-100" alt="Imagen 2" />
+            <div class="carousel-caption">
+                <p>Elige entre cientos de frases o escribe la tuya. Diseño 100% personalizado.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/inicio/imagen3.jpg" class="d-block w-100" alt="Imagen 3" />
+            <div class="carousel-caption">
+                <h5>Tercera imagen</h5>
+                <p>Descripción de la tercera imagen</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/inicio/imagen4.jpg" class="d-block w-100" alt="Imagen 4" />
+            <div class="carousel-caption">
+                <h5>Cuarta imagen</h5>
+                <p>Descripción de la cuarta imagen</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/inicio/imagen5.jpg" class="d-block w-100" alt="Imagen 5" />
+            <div class="carousel-caption">
+                <h5>Quinta imagen</h5>
+                <p>Descripción de la quinta imagen</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Controles de navegación mejorados -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExample" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExample" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+    <!-- Servicios Section -->
+
+
+
+    <section class="py-5" id="servicios" style="background: var(--gris-claro);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" style="color: var(--gris-oscuro);">
+                        Nuestros Servicios
+                    </h2>
+                    <div style="width: 100px; height: 4px; background: var(--rojo-intenso); margin: 20px auto;"></div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card p-4 text-center h-100 floating" style="animation-delay: 0s;">
+                        <i class="fas fa-home service-icon"></i>
+                        <h4 class="fw-bold mb-3" style="color: var(--gris-oscuro);">Construcción Residencial</h4>
+                        <p style="color: var(--gris-oscuro);">Casas, departamentos y desarrollos habitacionales con los más altos estándares de calidad.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card p-4 text-center h-100 floating" style="animation-delay: 0.5s;">
+                        <i class="fas fa-building service-icon"></i>
+                        <h4 class="fw-bold mb-3" style="color: var(--gris-oscuro);">Construcción Comercial</h4>
+                        <p style="color: var(--gris-oscuro);">Oficinas, locales comerciales y centros empresariales diseñados para el éxito.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card p-4 text-center h-100 floating" style="animation-delay: 1s;">
+                        <i class="fas fa-tools service-icon"></i>
+                        <h4 class="fw-bold mb-3" style="color: var(--gris-oscuro);">Remodelaciones</h4>
+                        <p style="color: var(--gris-oscuro);">Renovamos y modernizamos espacios existentes con creatividad y funcionalidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MDBootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    
+    <script>
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Efecto de navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(90deg, rgba(51, 51, 51, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%)';
+                navbar.style.backdropFilter = 'blur(15px)';
+            } else {
+                navbar.style.background = 'linear-gradient(90deg, var(--gris-oscuro) 0%, var(--negro) 100%)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+        
+        // Activar enlaces del menú según la sección visible
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Animación de entrada para elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+    
+</body>  
+</html>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-elements">
+            <div class="floating-element"><i class="fas fa-hammer"></i></div>
+            <div class="floating-element"><i class="fas fa-hard-hat"></i></div>
+            <div class="floating-element"><i class="fas fa-tools"></i></div>
+            <div class="floating-element"><i class="fas fa-ruler-combined"></i></div>
+        </div>
+        
+        </section>
+        
+        
+      

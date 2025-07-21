@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Drywall Pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #2c2c2c;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #dc2626, #b91c1c);
+            --gradient-dark: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+
+             --rojo-intenso: #C00000;
+            --gris-claro: #D9D9D9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
+            --gris-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+         
+        /* Navbar principal */
+        .navbar-custom {
+            background: linear-gradient(90deg, var(--gris-oscuro) 0%, var(--negro) 100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--rojo-intenso);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--rojo-intenso) !important;
+        }
+        
+        .navbar-brand i {
+            color: var(--rojo-intenso);
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Elementos del menú */
+        .navbar-nav .nav-link {
+            color: var(--blanco) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--rojo-intenso);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(192, 0, 0, 0.4);
+            color: var(--blanco) !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: var(--rojo-intenso);
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        /* Botón CTA especial */
+        .btn-cta {
+            background: linear-gradient(45deg, var(--rojo-intenso), #ff4757);
+            border: none;
+            color: var(--blanco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(192, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff4757, var(--rojo-intenso));
+        }
+        
+
+        /* Partículas flotantes de fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .particle:nth-child(1) { 
+            width: 12px; height: 12px; left: 10%; 
+            background: linear-gradient(45deg, #dc2626, #ff4444);
+            opacity: 0.7; animation-delay: 0s; 
+        }
+        .particle:nth-child(2) { 
+            width: 18px; height: 18px; left: 20%; 
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            opacity: 0.6; animation-delay: 1s; 
+        }
+        .particle:nth-child(3) { 
+            width: 8px; height: 8px; left: 30%; 
+            background: linear-gradient(45deg, #dc2626, #991b1b);
+            opacity: 0.8; animation-delay: 2s; 
+        }
+        .particle:nth-child(4) { 
+            width: 15px; height: 15px; left: 40%; 
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            opacity: 0.5; animation-delay: 0.5s; 
+        }
+        .particle:nth-child(5) { 
+            width: 10px; height: 10px; left: 50%; 
+            background: linear-gradient(45deg, #dc2626, #ff6666);
+            opacity: 0.9; animation-delay: 1.5s; 
+        }
+        .particle:nth-child(6) { 
+            width: 20px; height: 20px; left: 60%; 
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            opacity: 0.4; animation-delay: 2.5s; 
+        }
+        .particle:nth-child(7) { 
+            width: 6px; height: 6px; left: 70%; 
+            background: linear-gradient(45deg, #dc2626, #cc1111);
+            opacity: 0.7; animation-delay: 3s; 
+        }
+        .particle:nth-child(8) { 
+            width: 14px; height: 14px; left: 80%; 
+            background: linear-gradient(45deg, #ffffff, #dddddd);
+            opacity: 0.6; animation-delay: 3.5s; 
+        }
+        .particle:nth-child(10) { 
+            width: 11px; height: 11px; left: 15%; 
+            background: linear-gradient(45deg, #ffffff, #f8f8f8);
+            opacity: 0.7; animation-delay: 4.5s; 
+        }
+        .particle:nth-child(11) { 
+            width: 22px; height: 22px; left: 25%; 
+            background: linear-gradient(45deg, #dc2626, #ff5555);
+            opacity: 0.5; animation-delay: 5s; 
+        }
+        .particle:nth-child(12) { 
+            width: 9px; height: 9px; left: 35%; 
+            background: linear-gradient(45deg, #ffffff, #eeeeee);
+            opacity: 0.8; animation-delay: 5.5s; 
+        }
+        .particle:nth-child(13) { 
+            width: 17px; height: 17px; left: 45%; 
+            background: linear-gradient(45deg, #dc2626, #aa1111);
+            opacity: 0.6; animation-delay: 6s; 
+        }
+        .particle:nth-child(14) { 
+            width: 13px; height: 13px; left: 75%; 
+            background: linear-gradient(45deg, #ffffff, #d0d0d0);
+            opacity: 0.7; animation-delay: 6.5s; 
+        }
+        .particle:nth-child(15) { 
+            width: 19px; height: 19px; left: 85%; 
+            background: linear-gradient(45deg, #dc2626, #ff2222);
+            opacity: 0.9; animation-delay: 7s; 
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(100vh) rotate(0deg) scale(1); 
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+                transform: translateY(90vh) rotate(36deg) scale(1.1);
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(50vh) rotate(180deg) scale(1.3);
+                filter: brightness(1.5);
+            }
+            90% { 
+                opacity: 1; 
+                transform: translateY(10vh) rotate(324deg) scale(1.1);
+            }
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        /* Título principal con efectos */
+        .hero-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .hero-title h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(45deg, var(--primary-red), #ffffff, var(--primary-red));
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 30px rgba(188, 18, 18, 0.5);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .subtitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            animation: subtitleSlide 2s ease-out;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 30px rgba(220, 38, 38, 0.5), 0 0 60px rgba(220, 38, 38, 0.3); }
+            100% { text-shadow: 0 0 50px rgba(220, 38, 38, 0.8), 0 0 80px rgba(220, 38, 38, 0.5); }
+        }
+
+        @keyframes subtitleSlide {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 0.8; transform: translateY(0); }
+        }
+
+        /* Tarjetas de contacto */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(145deg, rgba(31, 31, 31, 0.9), rgba(0, 0, 0, 0.9));
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            animation: cardSlideUp 1s ease-out;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-red), transparent, var(--primary-red));
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+            animation: borderGlow 2s infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { background: linear-gradient(45deg, var(--primary-red), transparent, var(--primary-red)); }
+            50% { background: linear-gradient(45deg, var(--dark-red), var(--primary-red), var(--dark-red)); }
+        }
+
+        @keyframes cardSlideUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            animation: iconBounce 2s infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .contact-card h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Formulario de contacto */
+        .contact-form {
+            background: linear-gradient(145deg, rgba(31, 31, 31, 0.95), rgba(0, 0, 0, 0.95));
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .form-outline {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .form-control {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: var(--primary-red);
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+            color: #ffffff;
+        }
+
+        .form-label {
+            color: #cccccc;
+            font-weight: 500;
+        }
+
+        /* Botón de envío con efectos especiales */
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+            border: none;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1rem 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Información de contacto flotante */
+        .floating-info {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            animation: floatUpDown 4s ease-in-out infinite;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-60%); }
+        }
+
+        .floating-contact-item {
+            background: rgba(220, 38, 38, 0.9);
+            color: white;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+        }
+
+        .floating-contact-item:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(220, 38, 38, 1);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title h1 {
+                font-size: 2.5rem;
+            }
+            
+            .floating-info {
+                display: none;
+            }
+            
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .main-container {
+                padding-top: 6rem;
+            }
+
+            .navbar-custom {
+                padding: 0.5rem 0;
+            }
+
+            .btn-cta {
+                margin-left: 0;
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+
+        /* Efecto de typing para el subtítulo */
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid var(--primary-red);
+            white-space: nowrap;
+            animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary-red); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+           <a class="navbar-brand" href="#">
+      <img src="img/logo/logo.png" alt="Icono" class="icon" style="height: 50px; width: auto; margin-right: 8px;">
+    
+    
+</a>
+            
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">
+                            <i class="fas fa-tools me-2"></i>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">
+                            <i class="fas fa-building me-2"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">
+                            <i class="fas fa-users me-2"></i>Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contactos.html">
+                            <i class="fas fa-phone me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-cta red" style="background-color: #25D366; color: white;">
+    <i class="fab fa-whatsapp me-2"></i>
+    WhatsApp
+</button>
+            </div>
+        </div>
+    </nav>
+    
+   <br><br>
+    <!-- Partículas de fondo -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+  
+    </div>
+
+    <!-- Información de contacto flotante -->
+    <div class="floating-info">
+        <div class="floating-contact-item" title="Teléfono">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="floating-contact-item" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="floating-contact-item" title="Email">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="floating-contact-item" title="Ubicación">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="container">
+            <!-- Título principal -->
+            <div class="hero-titles">
+                <center><h1>CONTÁCTANOS</h1></center>
+                <p class="subtitle typing-effect">Expertos en Drywall - Tu proyecto, nuestra pasión</p>
+            </div>
+
+            <!-- Tarjetas de contacto -->
+            <div class="contact-grid">
+                <div class="contact-card" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p><strong>Oficina:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Móvil:</strong> +1 (555) 987-6543</p>
+                    <p>Disponible 24/7 para emergencias</p>
+                </div>
+
+                <div class="contact-card" style="animation-delay: 0.4s;">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p><strong>Chat directo:</strong> +1 (555) 999-0000</p>
+                    <p>Respuesta inmediata</p>
+                    <p>Envía fotos de tu proyecto</p>
+                </div>
+
+                <div class="contact-card" style="animation-delay: 0.6s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><strong>General:</strong> info@drywallpro.com</p>
+                    <p><strong>Presupuestos:</strong> quotes@drywallpro.com</p>
+                    <p>Respuesta en 24 horas</p>
+                </div>
+
+                <div class="contact-card" style="animation-delay: 0.8s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p><strong>Dirección:</strong> Av. Construcción 123</p>
+                    <p>Ciudad Industrial, CP 12345</p>
+                    <p>Lun-Vie: 8AM-6PM | Sáb: 9AM-2PM</p>
+                </div>
+
+                <div class="contact-card" style="animation-delay: 1s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horarios</h3>
+                    <p><strong>Lunes a Viernes:</strong> 8:00 AM - 6:00 PM</p>
+                    <p><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+                    <p><strong>Emergencias:</strong> 24/7</p>
+                </div>
+
+                <div class="contact-card" style="animation-delay: 1.2s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicios</h3>
+                    <p>• Instalación de Drywall</p>
+                    <p>• Reparaciones y mantenimiento</p>
+                    <p>• Diseños personalizados</p>
+                    <p>• Presupuestos gratuitos</p>
+                </div>
+            </div>
+
+            <!-- Formulario de contacto -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <div class="text-center mb-4">
+                            <h2 style="color: #ffffff; margin-bottom: 1rem;">
+                                <i class="fas fa-paper-plane" style="color: var(--primary-red); margin-right: 0.5rem;"></i>
+                                Envíanos tu Consulta
+                            </h2>
+                            <p style="color: #cccccc;">Completa el formulario y te contactaremos en menos de 24 horas</p>
+                        </div>
+
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-outline">
+                                        <input type="text" id="nombre" class="form-control" required>
+                                        <label class="form-label" for="nombre">Nombre completo *</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline">
+                                        <input type="email" id="email" class="form-control" required>
+                                        <label class="form-label" for="email">Email *</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-outline">
+                                        <input type="tel" id="telefono" class="form-control" required>
+                                        <label class="form-label" for="telefono">Teléfono *</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline">
+                                        <select id="servicio" class="form-control" required>
+                                            <option value="">Selecciona un servicio</option>
+                                            <option value="instalacion">Instalación nueva</option>
+                                            <option value="reparacion">Reparación</option>
+                                            <option value="remodelacion">Remodelación</option>
+                                            <option value="diseno">Diseño personalizado</option>
+                                            <option value="mantenimiento">Mantenimiento</option>
+                                            <option value="emergencia">Servicio de emergencia</option>
+                                        </select>
+                                        <label class="form-label" for="servicio">Tipo de servicio *</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-outline">
+                                <textarea id="mensaje" class="form-control" rows="5" required></textarea>
+                                <label class="form-label" for="mensaje">Describe tu proyecto *</label>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>
+                                    Enviar Consulta
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <script>
+        // Inicializar formularios de MDB
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar-custom');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scrolling para enlaces del navbar
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Animación para el botón de WhatsApp
+            const whatsappBtn = document.querySelector('.btn-cta');
+            whatsappBtn.addEventListener('click', function() {
+                window.open('https://wa.me/15559990000', '_blank');
+            });
+            // Inicializar inputs de MDB
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                new mdb.Input(input);
+            });
+
+            // Efecto de hover para las tarjetas
+            const cards = document.querySelectorAll('.contact-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+                
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02) rotateY(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+                });
+            });
+
+            // Funcionalidad del formulario
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Animación del botón
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Enviando...';
+                submitBtn.style.background = 'linear-gradient(45deg, #059669, #047857)';
+                
+                // Simular envío
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check" style="margin-right: 0.5rem;"></i>¡Enviado!';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>Enviar Consulta';
+                        submitBtn.style.background = 'linear-gradient(45deg, var(--primary-red), var(--dark-red))';
+                        form.reset();
+                        
+                        // Reinicializar los inputs de MDB
+                        inputs.forEach(input => {
+                            if (input.value === '') {
+                                input.parentNode.classList.remove('form-outline-focused');
+                            }
+                        });
+                    }, 2000);
+                }, 2000);
+            });
+
+            // Funcionalidad de los botones flotantes
+            const floatingBtns = document.querySelectorAll('.floating-contact-item');
+            floatingBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    const actions = [
+                        () => window.open('tel:+15551234567'),
+                        () => window.open('https://wa.me/15559990000'),
+                        () => window.open('mailto:info@drywallpro.com'),
+                        () => window.open('https://maps.google.com')
+                    ];
+                    
+                    if (actions[index]) {
+                        actions[index]();
+                    }
+                });
+            });
+
+            // Efecto de paralaje en las partículas
+            window.addEventListener('scroll', function() {
+                const particles = document.querySelectorAll('.particle');
+                const scrolled = window.pageYOffset;
+                
+                particles.forEach((particle, index) => {
+                    const speed = 0.1 + (index * 0.05);
+                    particle.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+
+            // Efecto de typing para el subtítulo
+            const subtitle = document.querySelector('.typing-effect');
+            const text = subtitle.textContent;
+            subtitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    subtitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Efectos adicionales con mouse movement
+        document.addEventListener('mousemove', function(e) {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.01;
+                const x = (mouseX - 0.5) * speed * 100;
+                const y = (mouseY - 0.5) * speed * 100;
+                
+                particle.style.transform += ` translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

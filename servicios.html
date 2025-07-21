@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Profesionales - Construcción Drywall</title>
+    <link rel="icon" type="image/png" href="img/logo/logoico.svg">
+    
+   <!-- MDBootstrap CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/estilos.css">
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <style>
+      
+       
+ :root {
+                --rojo-intenso: #C00000;
+                --gris-claro: #D9D9D9;
+                --negro: #000000;
+                --blanco: #FFFFFF;
+                --gris-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+       
+       /* Navbar principal */
+        .navbar-custom {
+            background: linear-gradient(90deg, var(--gris-oscuro) 0%, var(--negro) 100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--rojo-intenso);
+            transition: all 0.3s ease;
+
+            
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--rojo-intenso) !important;
+        }
+        
+        .navbar-brand i {
+            color: var(--rojo-intenso);
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Elementos del menú */
+        .navbar-nav .nav-link {
+            color: var(--blanco) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: var(--rojo-intenso);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(192, 0, 0, 0.4);
+            color: var(--blanco) !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: var(--rojo-intenso);
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        /* Botón CTA especial */
+        .btn-cta {
+            background: linear-gradient(45deg, var(--rojo-intenso), #ff4757);
+            border: none;
+            color: var(--blanco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(192, 0, 0, 0.3);
+        }
+        
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(192, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff4757, var(--rojo-intenso));
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(220, 53, 69, 0.1) 50%, rgba(10, 10, 10, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1581092918484-8313dea6b9d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 25% 25%, rgba(220, 53, 69, 0.4) 0%, transparent 70%),
+                radial-gradient(ellipse at 75% 75%, rgba(220, 53, 69, 0.3) 0%, transparent 70%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #dc3545, #ffffff);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s ease-in-out infinite;
+            text-shadow: 0 0 50px rgba(220, 53, 69, 0.5);
+        }
+
+        @keyframes textShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 0.95;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            background: linear-gradient(45deg, #dc3545, #b02a37);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(220, 53, 69, 0.6);
+            background: linear-gradient(45deg, #b02a37, #dc3545);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: 
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23dc3545" stroke-width="0.3" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(20px) translateY(20px); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #dc3545, #ff6b7a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #dc3545, transparent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(45, 45, 45, 0.8));
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.6s ease;
+            position: relative;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.15), transparent);
+            transition: left 0.8s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(220, 53, 69, 0.4);
+            border-color: #dc3545;
+        }
+
+        .service-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 26, 0.8) 100%);
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #dc3545, #b02a37);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 3;
+            box-shadow: 0 5px 20px rgba(220, 53, 69, 0.6);
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-content {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .service-description {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        .service-features {
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: #dc3545;
+            font-weight: bold;
+            background: rgba(220, 53, 69, 0.2);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .service-cta {
+            background: linear-gradient(45deg, #dc3545, #b02a37);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.5);
+            background: linear-gradient(45deg, #b02a37, #dc3545);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, rgba(10, 10, 10, 1) 100%);
+            position: relative;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220, 53, 69, 0.3);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #dc3545, #b02a37);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: #dc3545;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .process-description {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: 
+                radial-gradient(ellipse at center, rgba(220, 53, 69, 0.1) 0%, transparent 70%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #dc3545);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #cccccc;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #230104, #b02a37);
+            color: white;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(220, 53, 69, 0.6);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        .cta-secondary:hover {
+            background: #dc3545;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .feature-list { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .nav-links { gap: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .process-grid { grid-template-columns: 1fr; }
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+      <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+           <a class="navbar-brand" href="#">
+      <img src="img/logo/logo.png" alt="Icono" class="icon" style="height: 50px; width: auto; margin-right: 8px;">
+    
+    
+</a>
+            
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="servicios.html">
+                            <i class="fas fa-tools me-2"></i>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">
+                            <i class="fas fa-building me-2"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">
+                            <i class="fas fa-users me-2"></i>Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactos.html">
+                            <i class="fas fa-phone me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-cta red" style="background-color: #25D366; color: white;">
+    <i class="fab fa-whatsapp me-2"></i>
+    WhatsApp
+</button>
+            </div>
+        </div>
+    </nav>
+    
+   <br><br>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Servicios Especializados</h1>
+            <p>Transformamos espacios con soluciones integrales en construcción seca, combinando innovación tecnológica, materiales premium y la experiencia de más de 15 años en el mercado</p>
+            <button class="hero-cta">Solicitar Cotización</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p class="section-subtitle">Ofrecemos soluciones completas e innovadoras para cada necesidad constructiva, respaldadas por la más alta calidad y profesionalismo</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Steel Framing -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">🏗️</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Steel Framing Avanzado</h3>
+                    <p class="service-description">
+                        Sistema constructivo de vanguardia utilizando perfiles de acero galvanizado de calibre estructural. 
+                        Ofrecemos construcción rápida, eficiente y altamente resistente para proyectos residenciales, 
+                        comerciales e industriales con certificaciones internacionales.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Resistencia sísmica superior</div>
+                            <div class="feature-item">Construcción 60% más rápida</div>
+                            <div class="feature-item">Materiales certificados</div>
+                            <div class="feature-item">Diseño arquitectónico libre</div>
+                            <div class="feature-item">Aislamiento térmico óptimo</div>
+                            <div class="feature-item">Garantía estructural 20 años</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+
+            <!-- Sistemas de Cubierta -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">🏠</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Sistemas de Cubiertas Premium</h3>
+                    <p class="service-description">
+                        Diseño e instalación de cubiertas especializadas con tecnología de punta. Trabajamos con 
+                        materiales de primera calidad incluyendo membranas impermeabilizantes, sistemas de drenaje 
+                        inteligente y aislamiento térmico multicapa para máxima protección.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Impermeabilización total</div>
+                            <div class="feature-item">Aislamiento multicapa</div>
+                            <div class="feature-item">Drenaje inteligente</div>
+                            <div class="feature-item">Materiales eco-friendly</div>
+                            <div class="feature-item">Resistencia UV avanzada</div>
+                            <div class="feature-item">Mantenimiento mínimo</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+
+            <!-- Cielos Drywall -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">✨</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Cielos Drywall de Diseño</h3>
+                    <p class="service-description">
+                        Cielos falsos arquitectónicos con acabados impecables y diseños personalizados. Integramos 
+                        iluminación LED, sistemas de climatización, aislamiento acústico profesional y elementos 
+                        decorativos que transforman completamente los espacios interiores.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Diseños personalizados</div>
+                            <div class="feature-item">Iluminación LED integrada</div>
+                            <div class="feature-item">Aislamiento acústico</div>
+                            <div class="feature-item">Accesos técnicos ocultos</div>
+                            <div class="feature-item">Acabados premium</div>
+                            <div class="feature-item">Instalación express</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+
+            <!-- Muros y Divisiones -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581092918484-8313dea6b9d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">🧱</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Muros y Divisiones Inteligentes</h3>
+                    <p class="service-description">
+                        Construcción de muros divisorios y paredes decorativas con tecnología drywall avanzada. 
+                        Ofrecemos soluciones para oficinas, hogares y espacios comerciales con excelente aislamiento 
+                        acústico, térmico y posibilidades de diseño infinitas.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Aislamiento acústico</div>
+                            <div class="feature-item">Instalaciones empotradas</div>
+                            <div class="feature-item">Flexibilidad espacial</div>
+                            <div class="feature-item">Acabados texturizados</div>
+                            <div class="feature-item">Resistencia al fuego</div>
+                            <div class="feature-item">Montaje rápido</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+
+            <!-- Pisos Flotantes -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">📐</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Pisos Flotantes Profesionales</h3>
+                    <p class="service-description">
+                        Instalación especializada de pisos flotantes premium con las mejores marcas del mercado. 
+                        Trabajamos con laminados de alta resistencia, pisos vinílicos luxury y madera engineered, 
+                        garantizando acabados perfectos y durabilidad excepcional.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Marcas reconocidas</div>
+                            <div class="feature-item">Instalación perfecta</div>
+                            <div class="feature-item">Alta resistencia</div>
+                            <div class="feature-item">Variedad de diseños</div>
+                            <div class="feature-item">Garantía extendida</div>
+                            <div class="feature-item">Mantenimiento fácil</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+
+            <!-- Cielos PVC y Ripados -->
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-icon">🎨</div>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Cielos PVC y Sistemas Ripados</h3>
+                    <p class="service-description">
+                        Instalación de cielos decorativos en PVC de alta calidad y sistemas de ripados modernos. 
+                        Perfectos para ambientes húmedos, con múltiples opciones de colores, texturas y patrones 
+                        que aportan calidez, elegancia y funcionalidad a cualquier espacio.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-list">
+                            <div class="feature-item">Resistente a humedad</div>
+                            <div class="feature-item">Múltiples texturas</div>
+                            <div class="feature-item">Fácil limpieza</div>
+                            <div class="feature-item">Diseños modernos</div>
+                            <div class="feature-item">Instalación rápida</div>
+                            <div class="feature-item">Larga durabilidad</div>
+                        </div>
+                    </div>
+                    <button class="service-cta">Ver Detalles</button>
+                </div>
+            </div>
+    
+<!-- MDB JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    
+    <script>
+        // Inicializar MDB
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar animaciones
+            const animatedElements = document.querySelectorAll('[data-mdb-animation-init]');
+            animatedElements.forEach(element => {
+                // Las animaciones se inicializan automáticamente con MDB
+            });
+
+            // Inicializar ripple effects
+            const rippleElements = document.querySelectorAll('[data-mdb-ripple-init]');
+            rippleElements.forEach(element => {
+                new mdb.Ripple(element);
+            });
+        });
+
+      
+        // Parallax effect suave
+        function handleParallax() {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const rate = scrolled * -0.3 * (index + 1);
+                shape.style.transform = `translateY(${rate}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        }
+
+        // Animaciones de contador
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (counter.textContent.includes('+')) {
+                        counter.textContent = Math.floor(current) + '+';
+                    } else if (counter.textContent.includes('%')) {
+                        counter.textContent = Math.floor(current) + '%';
+                    } else if (counter.textContent.includes('/')) {
+                        counter.textContent = Math.floor(current) + '/7';
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+        }
+
+        // Intersection Observer para animaciones
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('stat-item')) {
+                            animateCounters();
+                        }
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observar elementos animados
+            const animatedElements = document.querySelectorAll('.service-card, .stat-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                observer.observe(el);
+            });
+        }
+
+        // Efecto de partículas mejorado
+        function createParticleEffect() {
+            const particleContainer = document.createElement('div');
+            particleContainer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+                overflow: hidden;
+            `;
+            document.body.appendChild(particleContainer);
+
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 3px;
+                    height: 3px;
+                    background: var(--primary-color);
+                    border-radius: 50%;
+                    opacity: 0.6;
+                    animation: particleFloat ${Math.random() * 10 + 5}s linear infinite;
+                `;
+                
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particleContainer.appendChild(particle);
+
+                // Remover partícula después de la animación
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 15000);
+            }
+
+            // Crear partículas periódicamente
+            setInterval(createParticle, 800);
+        }
+
+        // Agregar estilos de animación de partículas
+        function addParticleStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes particleFloat {
+                    0% {
+                        transform: translateY(100vh) rotate(0deg);
+                        opacity: 0;
+                    }
+                    10% {
+                        opacity: 0.6;
+                    }
+                    90% {
+                        opacity: 0.6;
+                    }
+                    100% {
+                        transform: translateY(-100px) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Smooth scroll para navegación
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Lazy loading de imágenes
+        function initLazyLoading() {
+            const images = document.querySelectorAll('img');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.style.opacity = '0';
+                        img.style.transition = 'opacity 0.5s ease';
+                        
+                        img.onload = () => {
+                            img.style.opacity = '1';
+                        };
+                        
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', handleParallax, { passive: true });
+        window.addEventListener('load', () => {
+            addCustomEffects();
+            initScrollAnimations();
+            addParticleStyles();
+            createParticleEffect();
+            initSmoothScroll();
+            initLazyLoading();
+        });
+
+        // Responsive menu toggle (si se necesita)
+        function initMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    document.querySelector('.mobile-menu').classList.toggle('active');
+                });
+            }
+        }
+
+        // Performance optimization
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleParallax);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 16);
+            }
+        }
+
+        window.addEventListener('scroll', requestTick, { passive: true });
+    </script>
+</body>
+</html>
